@@ -141,6 +141,12 @@ label {
   border-radius: 10px;
 }
 
+.form__query__text{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .form__query__support {
   display: flex;
   align-items: center;
@@ -288,6 +294,7 @@ input[type="radio"] {
 
   .form__query__text {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
 }
