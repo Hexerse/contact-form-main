@@ -1,0 +1,293 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --clr-greenlight: hsl(148, 38%, 91%);
+  --clr-greenmedium: hsl(169, 82%, 27%);
+  --clr-red: hsl(0, 66%, 54%);
+
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-greymedium: hsl(186, 15%, 59%);
+  --clr-greydark: hsl(187, 24%, 22%);
+
+  --ff: "Karla", sans-serif;
+  --fw-light: 400;
+  --fw-bold: 700;
+}
+
+input {
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+body {
+  font-family: var(--ff);
+  background-color: var(--clr-greenlight);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.form {
+  background-color: white;
+  border-radius: 1rem;
+  margin: 1rem 2rem;
+}
+
+.form__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 2rem;
+}
+
+label {
+  color: var(--clr-greydark);
+}
+
+.hidden {
+  display: none;
+}
+
+.form__firstname {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__lastname {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__email {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__query {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.form__query__general {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  border: 1px solid var(--clr-greymedium);
+  padding: 0.2rem 1rem;
+  border-radius: 10px;
+}
+
+.form__query__support {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  border: 1px solid var(--clr-greymedium);
+  padding: 0.2rem 1rem;
+  border-radius: 10px;
+}
+
+.form__query__general label {
+  font-size: 1.1rem;
+}
+
+.form__query__support label {
+  font-size: 1.1rem;
+}
+
+.form__message {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__consent {
+  display: flex;
+}
+
+textarea {
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+  box-sizing: border-box;
+  border: 1px solid var(--clr-greymedium);
+
+  min-width: 100%;
+  min-height: 6rem;
+  border-radius: 10px;
+  padding-left: 0.3rem;
+}
+
+.form__consent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  accent-color: #0c7d69;
+}
+
+.submit {
+  border: none;
+  background-color: #0c7d69;
+  color: white;
+  border-radius: 0.7rem;
+  height: 3rem;
+}
+
+.error {
+  border-color: #ee5965;
+  color: #ee4150;
+}
+
+input[type="text"] {
+  border: 1px solid var(--clr-greymedium);
+  height: 3rem;
+  border-radius: 10px;
+  padding-left: 1rem;
+}
+
+input[type="text"]:hover {
+  border: 1px solid var(--clr-greenmedium);
+}
+
+input[type="email"] {
+  border: 1px solid var(--clr-greymedium);
+  height: 3rem;
+  border-radius: 10px;
+  padding-left: 1rem;
+}
+
+input[type="email"]:hover {
+  border: 1px solid var(--clr-greenmedium);
+}
+
+input[type="radio"] {
+  width: 1.3em;
+  height: 1.3em;
+  margin-right: 5px;
+  accent-color: var(--clr-greenmedium);
+}
+
+.oncheck {
+  background-color: var(--clr-greenlight);
+}
+
+.success {
+  position: absolute;
+  top: 1.5rem;
+  background-color: #2a4244;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.success__heading {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: var(--fw-bold);
+  padding-bottom: 0.5rem;
+}
+
+.success__heading::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(./assets/images/icon-success-check.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 37.5rem) {
+  form {
+    width: 100%;
+    max-width: 60rem;
+  }
+
+  .form__firstname {
+    width: 48.5%;
+  }
+
+  .form__lastname {
+    width: 48.5%;
+  }
+
+  .form__name {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .form__query__general {
+    width: 48.5%;
+  }
+
+  .form__query__support {
+    width: 48.5%;
+  }
+
+  .form__query__text {
+    display: flex;
+    justify-content: space-between;
+  }
+}

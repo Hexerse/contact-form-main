@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Contact form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <form action="get" class="form" id="form">
+      <div class="form__text">
+        <div class="form__heading">
+          <h1>Contact Us</h1>
+        </div>
+
+        <div class="form__name">
+          <div class="form__firstname">
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstname" id="firstname" />
+            <span class="error"></span>
+          </div>
+          <div class="form__lastname">
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" id="lastname" />
+            <span class="error"></span>
+          </div>
+        </div>
+
+        <div class="form__email">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" />
+          <span class="error"></span>
+        </div>
+
+        <div class="form__query">
+          <label for="querytype">Query Type</label>
+          <div class="form__query__text">
+            <div class="form__query__general">
+              <input type="radio" name="querytype" id="general" />
+              <label for="general">General Enquiry</label>
+            </div>
+            <div class="form__query__support">
+              <input type="radio" name="querytype" id="support" />
+              <label for="support">Support Request</label>
+            </div>
+          </div>
+          <span class="error"></span>
+        </div>
+
+        <div class="form__message">
+          <label for="message">Message</label>
+          <textarea name="message" id="message"></textarea>
+          <span class="error"></span>
+        </div>
+
+        <div class="form__consent">
+          <input type="checkbox" name="consent" id="consent" type="text" />
+          <label for="consent">I consent to being contacted by the team</label>
+        </div>
+
+        <span class="error"> </span>
+
+        <button class="submit" type="submit">Submit</button>
+      </div>
+    </form>
+
+    <div class="success hidden" id="submit__success">
+      <div>
+        <p class="success__heading">Message Sent!</p>
+      </div>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
