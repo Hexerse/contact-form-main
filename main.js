@@ -65,3 +65,21 @@ form.addEventListener("submit", (e) => {
     success.classList.toggle("hidden");
   }
 });
+
+queryGeneral.addEventListener('click', () => {
+    const queryFormgeneral = document.querySelector(".form__query__general")
+    const queryFormsupport = document.querySelector(".form__query__support")
+
+    if (queryGeneral.checked){
+        queryFormgeneral.classList.add('oncheck');}
+        queryFormsupport.classList.remove('oncheck')
+})
+
+querySupport.addEventListener('click', () => {
+    const queryFormgeneral = document.querySelector(".form__query__general")
+    const queryFormsupport = document.querySelector(".form__query__support")
+
+    if (querySupport.checked){
+        queryFormsupport.classList.add('oncheck');}
+        queryFormgeneral.classList.remove('oncheck')
+})
